@@ -6,13 +6,13 @@
     <title>Meu Portfólio - Estilo Pixel</title>
     <!-- Carrega o Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Importa a fonte Pixel Art 'VT323' -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
+
     <style>
         /* Define a fonte VT323 como padrão */
         body {
@@ -24,7 +24,7 @@
             user-select: none;
             color: #000;
         }
-        
+
         /* Estilo para o canvas do Three.js */
         #three-background {
             display: block;
@@ -68,7 +68,7 @@
             cursor: pointer;
             border: 1px solid transparent;
         }
-        
+
         .desktop-icon:hover {
             background: rgba(0, 88, 224, 0.2);
             border: 1px dotted rgba(255, 255, 255, 0.5);
@@ -121,7 +121,7 @@
             /* text-shadow removido */
             cursor: pointer;
         }
-        
+
         #start-button:active {
             /* Gradiente removido */
             background: #4a8830;
@@ -158,7 +158,7 @@
             z-index: 999;
             display: none;
         }
-        
+
         #start-menu-header {
             /* Gradiente removido */
             background: #245edc;
@@ -167,22 +167,22 @@
             align-items: center;
             border-bottom: 2px solid #ffffff;
         }
-        
+
         #start-menu-body {
             display: flex;
         }
-        
+
         #start-menu-left {
             width: 60%;
             background: #d4e0f0;
             border-right: 1px solid #90b0d8;
         }
-        
+
         #start-menu-right {
             width: 40%;
             background: #ffffff;
         }
-        
+
         .start-menu-item {
             display: flex;
             align-items: center;
@@ -190,16 +190,16 @@
             cursor: pointer;
             font-size: 1.1rem;
         }
-        
+
         .start-menu-item:hover {
             background: #316ac5;
             color: white;
         }
-        
+
         .start-menu-item svg {
             margin-right: 0.5rem;
         }
-        
+
         #start-menu-footer {
             /* Gradiente removido */
             background: #245edc;
@@ -263,7 +263,7 @@
             cursor: pointer;
             line-height: 1;
         }
-        
+
         .window-button:active {
             border-style: inset;
         }
@@ -291,7 +291,7 @@
             font-size: 1.1rem;
             color: #333;
         }
-        
+
         .menu-bar span {
             margin-right: 1rem;
             cursor: pointer;
@@ -302,12 +302,12 @@
             padding: 1rem;
             background: white;
             /* Altura recalculada: 32px (title) + 28px (menu) = 60px */
-            height: calc(100% - 60px); 
+            height: calc(100% - 60px);
             overflow-y: auto;
             color: #000;
             line-height: 1.6; /* Espaçamento melhorado */
         }
-        
+
         /* Barra de Status */
         .status-bar {
             border-top: 1px solid #c0c0c0;
@@ -316,7 +316,7 @@
             background: #ece9d8;
             color: #333;
         }
-        
+
         /* Mensagem para dispositivos móveis (removida) */
 
 
@@ -335,10 +335,10 @@
             padding: 0;
             background: #000;
             /* Altura: 460 (total) - 32 (title) - 28 (menu) = 400px */
-            height: 400px; 
+            height: 400px;
             overflow: hidden;
         }
-        
+
         #game-canvas {
             display: block;
         }
@@ -348,15 +348,15 @@
 <body class="overflow-hidden">
     <canvas id="three-background"></canvas> <!-- Placeholder para o canvas do Three.js -->
 
-    <!-- 
+    <!--
       Início do Desktop
     -->
-    
+
     <main id="desktop">
 
         <!-- Ícones da Área de Trabalho -->
         <div class="p-4">
-            
+
             <!-- Ícone 1: Sobre Mim (Meu Computador) -->
             <div class="desktop-icon" onclick="openWindow('about-window')">
                 <!-- SVG Ícone "Meu Computador" -->
@@ -365,7 +365,7 @@
                 </svg>
                 <span>Sobre Mim</span>
             </div>
-            
+
             <!-- Ícone 2: Projetos (Meus Documentos) -->
             <div class="desktop-icon" onclick="openWindow('projects-window')">
                 <!-- SVG Ícone "Pasta" -->
@@ -374,7 +374,7 @@
                 </svg>
                 <span>Meus Projetos</span>
             </div>
-            
+
             <!-- Ícone 3: Contato (Email) -->
             <div class="desktop-icon" onclick="openWindow('contact-window')">
                 <!-- SVG Ícone "Email" -->
@@ -383,7 +383,7 @@
                 </svg>
                 <span>Contato</span>
             </div>
-            
+
              <!-- Ícone 4: Links (Internet) -->
             <div class="desktop-icon" onclick="openWindow('links-window')">
                 <!-- SVG Ícone "Internet/Globo" -->
@@ -394,12 +394,12 @@
             </div>
 
         </div>
-        
-        <!-- 
+
+        <!--
           Janelas (Modais)
           Cada janela corresponde a um ícone
         -->
-        
+
         <!-- Janela: Sobre Mim -->
         <div id="about-window" class="window"> <!-- Removido: style="top: 10%; left: 10%;" -->
             <div class="title-bar">
@@ -428,7 +428,7 @@
                 </p>
             </div>
         </div>
-        
+
         <!-- Janela: Projetos -->
         <div id="projects-window" class="window"> <!-- Removido: style="top: 20%; left: 20%;" -->
             <div class="title-bar">
@@ -445,31 +445,31 @@
             </div>
             <div class="window-content">
                 <h2 class="text-2xl font-bold mb-4">Meus Projetos</h2>
-                
+
                 <!-- Projeto 1 -->
                 <div class="mb-4 p-2 border border-gray-400"> <!-- Borda sem radius -->
                     <h3 class="text-lg font-bold">Projeto Incrivel 1</h3>
                     <p class="text-sm">Uma breve descricao do que este projeto faz e quais tecnologias foram usadas. Pode ser um app web, um site, ou qualquer outra coisa.</p>
                     <a href="#" class="text-blue-600 hover:underline">Ver no GitHub</a>
                 </div>
-                
+
                 <!-- Projeto 2 -->
                 <div class="mb-4 p-2 border border-gray-400">
                     <h3 class="text-lg font-bold">Projeto Fantastico 2</h3>
                     <p class="text-sm">Outro projeto interessante. Este usou React, Node.js e MongoDB para criar uma plataforma de e-commerce completa.</p>
                     <a href="#" class="text-blue-600 hover:underline">Ver Demo</a>
                 </div>
-                
+
                 <!-- Projeto 3 -->
                 <div class="mb-4 p-2 border border-gray-400">
                     <h3 class="text-lg font-bold">Ferramenta de Linha de Comando</h3>
                     <p class="text-sm">Um script em Python para automatizar tarefas chatas do dia a dia. Demonstra habilidades em scripting e automacao.</p>
                     <a href="#" class="text-blue-600 hover:underline">Ver Codigo</a>
                 </div>
-                
+
             </div>
         </div>
-        
+
         <!-- Janela: Contato -->
         <div id="contact-window" class="window"> <!-- Removido: style="top: 30%; left: 30%;" -->
             <div class="title-bar">
@@ -501,7 +501,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <!-- Janela: Links -->
         <div id="links-window" class="window"> <!-- Removido: style="top: 40%; left: 40%;" -->
             <div class="title-bar">
@@ -533,15 +533,15 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Janela: Asteroids -->
-        <div id="asteroids-window" class="window"> 
+        <div id="asteroids-window" class="window">
             <div class="title-bar">
                 <span>Asteroids</span>
                 <div class="title-bar-buttons">
                     <div id="min-button" class="window-button">_</div>
                     <!-- Chama closeGame() para parar o loop do jogo -->
-                    <div id="close-button" class="window-button" onclick="closeGame()">X</div> 
+                    <div id="close-button" class="window-button" onclick="closeGame()">X</div>
                 </div>
             </div>
             <div class="menu-bar">
@@ -554,11 +554,11 @@
             </div>
         </div>
 
-        
-        <!-- 
+
+        <!--
           Barra de Tarefas e Menu Iniciar
         -->
-        
+
         <!-- Menu Iniciar (Oculto) -->
         <div id="start-menu">
             <div id="start-menu-header">
@@ -568,7 +568,7 @@
                 </div>
                 <span class="ml-3 text-white font-bold text-lg">[Seu Nome]</span>
             </div>
-            
+
             <div id="start-menu-body">
                 <!-- Coluna Esquerda (Programas) -->
                 <div id="start-menu-left">
@@ -580,7 +580,7 @@
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg>
                         <strong>Email</strong>
                     </div>
-                    
+
                     <!-- Novo Item de Menu: Asteroids -->
                     <div class="start-menu-item" onclick="openGame()">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -601,12 +601,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <div id="start-menu-footer">
                 <!-- Botões falsos de Log Off / Desligar -->
             </div>
         </div>
-        
+
         <!-- Barra de Tarefas -->
         <div id="taskbar">
             <!-- Botão Iniciar -->
@@ -614,10 +614,10 @@
                 <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 3a1 1 0 000 2h14a1 1 0 100-2H3zM3 8a1 1 0 000 2h14a1 1 0 100-2H3zM3 13a1 1 0 000 2h14a1 1 0 100-2H3z"></path></svg>
                 iniciar
             </div>
-            
+
             <!-- (Espaço para ícones de janelas abertas) -->
             <div id="taskbar-icons" class="flex-grow"></div>
-            
+
             <!-- Bandeja do Sistema com Relógio -->
             <div id="system-tray">
                 <span id="clock">11:28</span>
@@ -628,7 +628,7 @@
 
     <script>
         // --- Lógica das Janelas (Modais) ---
-        
+
         function openWindow(windowId) {
             document.getElementById(windowId).style.display = 'block';
             // Traz a janela para frente (opcional, mas melhora o realismo)
@@ -639,7 +639,7 @@
                 if (z > maxZ) maxZ = z;
             });
             document.getElementById(windowId).style.zIndex = maxZ + 1;
-            
+
             // Fecha o menu iniciar ao abrir uma janela
             closeStartMenu();
         }
@@ -649,7 +649,7 @@
         }
 
         // --- Lógica para Arrastar Janelas ---
-        
+
         let activeWindow = null;
         let isDragging = false;
         let offsetX, offsetY;
@@ -664,14 +664,14 @@
             if (e.target.classList.contains('window-button')) {
                 return;
             }
-            
+
             isDragging = true;
             activeWindow = e.target.closest('.window');
-            
+
             // Calcula o offset do mouse em relação à janela
             offsetX = e.clientX - activeWindow.offsetLeft;
             offsetY = e.clientY - activeWindow.offsetTop;
-            
+
             // Traz a janela para a frente
             const windows = document.querySelectorAll('.window');
             let maxZ = 500;
@@ -688,13 +688,13 @@
 
         function dragWindow(e) {
             if (!isDragging || !activeWindow) return;
-            
+
             e.preventDefault();
-            
+
             // Define a nova posição da janela
             let newX = e.clientX - offsetX;
             let newY = e.clientY - offsetY;
-            
+
             // Limita o movimento às bordas da tela
             const taskbarHeight = 36; // Altura atualizada da barra de tarefas
             newX = Math.max(0, Math.min(newX, window.innerWidth - activeWindow.offsetWidth));
@@ -707,14 +707,14 @@
         function stopDrag() {
             isDragging = false;
             activeWindow = null;
-            
+
             // Remove os listeners globais
             document.removeEventListener('mousemove', dragWindow);
             document.removeEventListener('mouseup', stopDrag);
         }
-        
+
         // --- Lógica do Relógio ---
-        
+
         function updateClock() {
             const now = new Date();
             // Formata a hora para HH:MM (pt-BR)
@@ -724,38 +724,38 @@
             });
             document.getElementById('clock').innerText = time;
         }
-        
+
         // Atualiza o relógio a cada segundo
         setInterval(updateClock, 1000);
         // Chama uma vez para não começar vazio
         updateClock();
-        
-        
+
+
         // --- Lógica do Menu Iniciar ---
-        
+
         const startButton = document.getElementById('start-button');
         const startMenu = document.getElementById('start-menu');
         const desktop = document.getElementById('desktop');
-        
+
         function toggleStartMenu() {
             const isVisible = startMenu.style.display === 'block';
             startMenu.style.display = isVisible ? 'none' : 'block';
         }
-        
+
         function closeStartMenu() {
              startMenu.style.display = 'none';
         }
-        
+
         startButton.addEventListener('click', (e) => {
             e.stopPropagation(); // Impede que o clique feche o menu imediatamente
             toggleStartMenu();
         });
-        
+
         // Fecha o menu se clicar em qualquer lugar do desktop
         desktop.addEventListener('click', () => {
             closeStartMenu();
         });
-        
+
         // Impede que cliques dentro do menu o fechem
         startMenu.addEventListener('click', (e) => {
              e.stopPropagation();
@@ -790,17 +790,17 @@
                 // Se o jogo já está rodando, apenas traz a janela para frente
                 return;
             }
-            
+
             canvas = document.getElementById('game-canvas');
             ctx = canvas.getContext('2d');
             isGameRunning = true;
-            
+
             initGame();
-            
+
             // Listeners de Teclado
             document.addEventListener('keydown', handleKeyDown);
             document.addEventListener('keyup', handleKeyUp);
-            
+
             gameLoop();
         }
 
@@ -831,7 +831,7 @@
             keys = {};
             createAsteroidBelt(ASTEROID_NUM);
         }
-        
+
         function handleKeyDown(e) {
             if (isGameRunning) {
                 // Prevenir scroll da página com setas/espaço
@@ -841,7 +841,7 @@
                 keys[e.code] = true;
             }
         }
-        
+
         function handleKeyUp(e) {
             if (isGameRunning) {
                 keys[e.code] = false;
@@ -883,7 +883,7 @@
                 );
                 ctx.closePath();
                 ctx.stroke();
-                
+
                 // Fogo do propulsor (pixel art)
                 if (this.thrusting) {
                     ctx.fillStyle = "#FFC107"; // Amarelo
@@ -914,13 +914,13 @@
                     this.canShoot = false;
                     setTimeout(() => { this.canShoot = true; }, 200); // Cooldown do tiro
                 }
-                
+
                 // Mover
                 if (this.thrusting) {
                     this.vel.x += SHIP_THRUST * Math.cos(this.a);
                     this.vel.y -= SHIP_THRUST * Math.sin(this.a);
                 }
-                
+
                 // Fricção
                 this.vel.x *= (1 - FRICTION);
                 this.vel.y *= (1 - FRICTION);
@@ -932,14 +932,14 @@
                 // Wrap
                 this.wrapEdges();
             }
-            
+
             wrapEdges() {
                 if (this.x < 0 - this.r) this.x = canvas.width + this.r;
                 if (this.x > canvas.width + this.r) this.x = 0 - this.r;
                 if (this.y < 0 - this.r) this.y = canvas.height + this.r;
                 if (this.y > canvas.height + this.r) this.y = 0 - this.r;
             }
-            
+
             checkCollision(asteroid) {
                 // Simples colisão circular
                 let dist = Math.sqrt((this.x - asteroid.x)**2 + (this.y - asteroid.y)**2);
@@ -967,7 +967,7 @@
                 this.x += this.velX;
                 this.y += this.velY;
             }
-            
+
             isOffscreen() {
                 return this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height;
             }
@@ -988,7 +988,7 @@
                     this.offs.push(Math.random() * ASTEROID_JAG * 2 + 1 - ASTEROID_JAG);
                 }
             }
-            
+
             draw() {
                 ctx.strokeStyle = "white";
                 ctx.lineWidth = 2;
@@ -1015,14 +1015,14 @@
                 this.y += this.vel.y;
                 this.wrapEdges();
             }
-            
+
              wrapEdges() {
                 if (this.x < 0 - this.r) this.x = canvas.width + this.r;
                 if (this.x > canvas.width + this.r) this.x = 0 - this.r;
                 if (this.y < 0 - this.r) this.y = canvas.height + this.r;
                 if (this.y > canvas.height + this.r) this.y = 0 - this.r;
             }
-            
+
             checkCollision(bullet) {
                 let dist = Math.sqrt((this.x - bullet.x)**2 + (this.y - bullet.y)**2);
                 return dist < this.r + bullet.r;
@@ -1037,16 +1037,16 @@
                     x = Math.random() * canvas.width;
                     y = Math.random() * canvas.height;
                 } while (Math.sqrt((x - ship.x)**2 + (y - ship.y)**2) < ASTEROID_SIZE * 2 + ship.r);
-                
+
                 asteroids.push(new Asteroid(x, y, ASTEROID_SIZE));
             }
         }
-        
+
         function drawUI() {
             ctx.fillStyle = "white";
             ctx.font = "24px 'VT323', monospace";
             ctx.fillText("SCORE: " + score, 10, 30);
-            
+
             // Desenha vidas
             for(let i = 0; i < lives; i++) {
                  // Desenha uma pequena nave para cada vida
@@ -1062,7 +1062,7 @@
                 ctx.closePath();
                 ctx.stroke();
             }
-            
+
             if (isGameOver) {
                 ctx.font = "48px 'VT323', monospace";
                 ctx.textAlign = "center";
@@ -1082,7 +1082,7 @@
                 }
                 return;
             }
-        
+
             ship.update();
             bullets.forEach((b, i) => {
                 b.update();
@@ -1094,7 +1094,7 @@
             for (let i = bullets.length - 1; i >= 0; i--) {
                 for (let j = asteroids.length - 1; j >= 0; j--) {
                     if (asteroids[j].checkCollision(bullets[i])) {
-                        
+
                         // Quebrar asteroide
                         if (asteroids[j].r > ASTEROID_SIZE / 2) {
                             asteroids.push(new Asteroid(asteroids[j].x, asteroids[j].y, asteroids[j].r / 2));
@@ -1103,16 +1103,16 @@
                         } else {
                             score += 100;
                         }
-                        
+
                         // Remover
                         asteroids.splice(j, 1);
                         bullets.splice(i, 1);
-                        
+
                         break; // Sair do loop interno
                     }
                 }
             }
-            
+
             // Colisão Nave
             for (let i = asteroids.length - 1; i >= 0; i--) {
                 if (ship.checkCollision(asteroids[i])) {
@@ -1129,7 +1129,7 @@
                     break;
                 }
             }
-            
+
             // Próximo nível
             if (asteroids.length === 0) {
                 createAsteroidBelt(ASTEROID_NUM + (ASTEROID_NUM - (lives - 1))); // Aumenta a dificuldade
@@ -1140,12 +1140,12 @@
             // Fundo
             ctx.fillStyle = "black";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
+
             // Objetos
             ship.draw();
             bullets.forEach(b => b.draw());
             asteroids.forEach(a => a.draw());
-            
+
             // UI
             drawUI();
         }
@@ -1155,10 +1155,10 @@
          */
         function gameLoop() {
             if (!isGameRunning) return;
-            
+
             updateGame();
             drawGame();
-            
+
             gameLoopId = requestAnimationFrame(gameLoop);
         }
 
@@ -1166,10 +1166,46 @@
 
         // --- Lógica do Fundo 3D com Three.js ---
 
+        let scene, camera, renderer, ambientLight, directionalLight, clouds, stars, moon;
+
+        function updateSceneByTime() {
+            const now = new Date();
+            const hour = now.getHours();
+
+            // Dia (6h - 17h)
+            if (hour >= 6 && hour < 18) {
+                renderer.setClearColor(0x77b6fb);
+                ambientLight.intensity = 0.9;
+                directionalLight.intensity = 1.1;
+                if (stars) stars.visible = false;
+                if (moon) moon.visible = false;
+                if (clouds) clouds.forEach(c => c.visible = true);
+            }
+            // Tarde (18h - 19h)
+            else if (hour >= 18 && hour < 20) {
+                renderer.setClearColor(0xff8c00); // Laranja escuro
+                ambientLight.intensity = 0.6;
+                directionalLight.intensity = 0.8;
+                if (stars) stars.visible = false;
+                if (moon) moon.visible = false;
+                if (clouds) clouds.forEach(c => c.visible = true);
+            }
+            // Noite (20h - 5h)
+            else {
+                renderer.setClearColor(0x000033); // Azul bem escuro
+                ambientLight.intensity = 0.2;
+                directionalLight.intensity = 0.3;
+                if (stars) stars.visible = true;
+                if (moon) moon.visible = true;
+                if (clouds) clouds.forEach(c => c.visible = false);
+            }
+        }
+
+
         function initThreeJSBackground() {
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({
                 canvas: document.querySelector('#three-background'),
             });
 
@@ -1181,20 +1217,40 @@
             camera.updateProjectionMatrix();
 
             // Posição da câmera ajustada para ver melhor as colinas
-            camera.position.set(0, 25, 120); 
+            camera.position.set(0, 25, 120);
             camera.lookAt(0, 0, 0);
-    
+
             // --- Iluminação ---
-            const ambientLight = new THREE.AmbientLight(0xcccccc, 0.9); // Luz ambiente um pouco mais forte
+            ambientLight = new THREE.AmbientLight(0xcccccc, 0.9); // Luz ambiente um pouco mais forte
             scene.add(ambientLight);
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 1.1); // Luz direcional
+            directionalLight = new THREE.DirectionalLight(0xffffff, 1.1); // Luz direcional
             directionalLight.position.set(-150, 100, 50); // Posição da luz para simular o sol da tarde
             scene.add(directionalLight);
 
             // --- Céu e Nevoeiro (Fog) ---
             const skyColor = 0x77b6fb; // Azul clássico do XP
             renderer.setClearColor(skyColor);
-            // A névoa foi removida para uma visão mais clara do horizonte
+
+            // --- Estrelas ---
+            const starVertices = [];
+            for (let i = 0; i < 10000; i++) {
+                const x = THREE.MathUtils.randFloatSpread(2000);
+                const y = THREE.MathUtils.randFloatSpread(2000);
+                const z = THREE.MathUtils.randFloatSpread(2000);
+                starVertices.push(x, y, z);
+            }
+            const starGeometry = new THREE.BufferGeometry();
+            starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+            const starMaterial = new THREE.PointsMaterial({ color: 0xffffff });
+            stars = new THREE.Points(starGeometry, starMaterial);
+            scene.add(stars);
+
+            // --- Lua ---
+            const moonGeometry = new THREE.SphereGeometry(15, 32, 16);
+            const moonMaterial = new THREE.MeshBasicMaterial({ color: 0xf0f0f0 });
+            moon = new THREE.Mesh(moonGeometry, moonMaterial);
+            moon.position.set(150, 100, -200);
+            scene.add(moon);
 
             /**
              * Cria uma textura de grama pixelada proceduralmente.
@@ -1222,11 +1278,11 @@
             }
 
             // --- Terreno de Gramado com Colinas (Procedural) ---
-            const groundGeometry = new THREE.PlaneGeometry(1000, 1000, 128, 128); 
+            const groundGeometry = new THREE.PlaneGeometry(1000, 1000, 64, 64);
             const groundMaterial = new THREE.MeshLambertMaterial({
                 map: createGrassTexture(),
             });
-    
+
             const positions = groundGeometry.attributes.position;
             const vertex = new THREE.Vector3();
 
@@ -1264,18 +1320,18 @@
                     const radius = 6 + Math.random() * 8; // Raio da esfera (6-14)
                     // Usamos SphereGeometry com poucos segmentos para um visual "low-poly" arredondado
                     const puffGeometry = new THREE.SphereGeometry(radius, 8, 6);
-                    
+
                     // Cria um material único para cada "puff" para variar a opacidade
-                    const cloudMaterial = new THREE.MeshLambertMaterial({ 
-                        color: 0xffffff, 
-                        transparent: true, 
+                    const cloudMaterial = new THREE.MeshLambertMaterial({
+                        color: 0xffffff,
+                        transparent: true,
                         opacity: 0.6 + Math.random() * 0.3, // Opacidade varia entre 0.6 e 0.9
                     });
 
                     const puff = new THREE.Mesh(puffGeometry, cloudMaterial);
-                    
+
                     puff.position.set(
-                        (Math.random() - 0.5) * 70, 
+                        (Math.random() - 0.5) * 70,
                         (Math.random() - 0.5) * 35,
                         (Math.random() - 0.5) * 70
                     );
@@ -1285,7 +1341,7 @@
             }
 
             // Array para armazenar e animar as nuvens
-            const clouds = [];
+            clouds = [];
             const numClouds = 30; // Aumenta o número de nuvens para um céu mais preenchido
 
             for (let i = 0; i < numClouds; i++) {
@@ -1305,9 +1361,11 @@
             // Loop de animação
             function animate() {
                 requestAnimationFrame(animate);
-                
-                camera.lookAt(0, 0, 0); 
-                
+
+                updateSceneByTime();
+
+                camera.lookAt(0, 0, 0);
+
                 // Movimento e reset das nuvens
                 clouds.forEach(cloud => {
                     cloud.position.x += cloud.userData.speed;
@@ -1317,7 +1375,7 @@
                         cloud.position.z = -150 - Math.random() * 250;
                     }
                 });
-                
+
                 renderer.render(scene, camera);
             }
 
